@@ -10,6 +10,8 @@ The Stellar DataStore service is your instantly available, secure and worry-free
 <a id="frameworks-supported"></a>
 ## Frameworks supported
 
+- .Net 9.0
+
 <a id="dependencies"></a>
 ## Dependencies
 
