@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stellards.SDK", "Stellards.SDK.csproj", "{53EF510A-1CB3-41AA-9A49-0320CE87031A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StellarDS.Demos.WPF", "Demos\WPF\StellarDS.Demos.WPF.csproj", "{0C0A5C52-3410-4266-935F-49DE53D5E2A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53EF510A-1CB3-41AA-9A49-0320CE87031A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53EF510A-1CB3-41AA-9A49-0320CE87031A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53EF510A-1CB3-41AA-9A49-0320CE87031A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53EF510A-1CB3-41AA-9A49-0320CE87031A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C0A5C52-3410-4266-935F-49DE53D5E2A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C0A5C52-3410-4266-935F-49DE53D5E2A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C0A5C52-3410-4266-935F-49DE53D5E2A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C0A5C52-3410-4266-935F-49DE53D5E2A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

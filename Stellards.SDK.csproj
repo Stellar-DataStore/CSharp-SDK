@@ -36,4 +36,13 @@
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Demos\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Demos\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Demos\**" />
+  </ItemGroup>
 </Project>
