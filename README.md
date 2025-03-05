@@ -1,4 +1,4 @@
-# Org.OpenAPITools - the C# library for the Stellar DataStore
+# StellarDS.SDK - the C# library for the Stellar DataStore
 
 The Stellar DataStore service is your instantly available, secure and worry-free cloud data storage service. Sign-up now and minutes later, you can start putting your data in the cloud.
 
