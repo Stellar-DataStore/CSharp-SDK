@@ -1,3 +1,5 @@
 /Demos/WPF/obj
 /obj
 /.idea
+*.cer
+/bin

@@ -8,4 +8,9 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="OAuth2Client" Version="1.6.1.2571" />
+      <PackageReference Include="Stellards.SDK" Version="1.0.1" />
+    </ItemGroup>
+
 </Project>
