@@ -215,7 +215,7 @@ namespace StellarDs.SDK.Api
         /// <param name="updateRecordRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AbstractObjectQueryResult</returns>
-        AbstractObjectQueryResult Put(Guid project, long table, bool? force = default(bool?), UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), int operationIndex = 0);
+        AbstractObjectQueryResult Put(Guid project, long table, UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), bool force = false, int operationIndex = 0);
 
         /// <summary>
         /// Updates records in the given table based on the values in record.
@@ -230,7 +230,7 @@ namespace StellarDs.SDK.Api
         /// <param name="updateRecordRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AbstractObjectQueryResult</returns>
-        ApiResponse<AbstractObjectQueryResult> PutWithHttpInfo(Guid project, long table, bool? force = default(bool?), UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), int operationIndex = 0);
+        ApiResponse<AbstractObjectQueryResult> PutWithHttpInfo(Guid project, long table, UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), bool force = false, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -473,7 +473,7 @@ namespace StellarDs.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AbstractObjectQueryResult</returns>
-        System.Threading.Tasks.Task<AbstractObjectQueryResult> PutAsync(Guid project, long table, bool? force = default(bool?), UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AbstractObjectQueryResult> PutAsync(Guid project, long table, UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), bool force = false, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Updates records in the given table based on the values in record.
@@ -489,7 +489,7 @@ namespace StellarDs.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AbstractObjectQueryResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AbstractObjectQueryResult>> PutWithHttpInfoAsync(Guid project, long table, bool? force = default(bool?), UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AbstractObjectQueryResult>> PutWithHttpInfoAsync(Guid project, long table, UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), bool force = false, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1839,9 +1839,9 @@ namespace StellarDs.SDK.Api
         /// <param name="updateRecordRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AbstractObjectQueryResult</returns>
-        public AbstractObjectQueryResult Put(Guid project, long table, bool? force = default(bool?), UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), int operationIndex = 0)
+        public AbstractObjectQueryResult Put(Guid project, long table, UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), bool force = false, int operationIndex = 0)
         {
-            var localVarResponse = PutWithHttpInfo(project, table, force, updateRecordRequest);
+            var localVarResponse = PutWithHttpInfo(project, table, updateRecordRequest, force);
             return localVarResponse.Data;
         }
 
@@ -1855,7 +1855,7 @@ namespace StellarDs.SDK.Api
         /// <param name="updateRecordRequest"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AbstractObjectQueryResult</returns>
-        public ApiResponse<AbstractObjectQueryResult> PutWithHttpInfo(Guid project, long table, bool? force = default(bool?), UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), int operationIndex = 0)
+        public ApiResponse<AbstractObjectQueryResult> PutWithHttpInfo(Guid project, long table, UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), bool force = false, int operationIndex = 0)
         {
             var localVarRequestOptions = new RequestOptions();
 
@@ -1885,7 +1885,7 @@ namespace StellarDs.SDK.Api
 
             localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "project", project));
             localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "table", table));
-            if (force != null)
+            if (force)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "force", force));
             }
@@ -1925,9 +1925,9 @@ namespace StellarDs.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AbstractObjectQueryResult</returns>
-        public async System.Threading.Tasks.Task<AbstractObjectQueryResult> PutAsync(Guid project, long table, bool? force = default(bool?), UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AbstractObjectQueryResult> PutAsync(Guid project, long table, UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), bool force = false, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            var localVarResponse = await PutWithHttpInfoAsync(project, table, force, updateRecordRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await PutWithHttpInfoAsync(project, table, updateRecordRequest, force, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1942,7 +1942,7 @@ namespace StellarDs.SDK.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AbstractObjectQueryResult)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<AbstractObjectQueryResult>> PutWithHttpInfoAsync(Guid project, long table, bool? force = default(bool?), UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ApiResponse<AbstractObjectQueryResult>> PutWithHttpInfoAsync(Guid project, long table, UpdateRecordRequest? updateRecordRequest = default(UpdateRecordRequest?), bool force = false, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             var localVarRequestOptions = new RequestOptions();
@@ -1972,7 +1972,7 @@ namespace StellarDs.SDK.Api
 
             localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "project", project));
             localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "table", table));
-            if (force != null)
+            if (force)
             {
                 localVarRequestOptions.QueryParameters.Add(ClientUtils.ParameterToMultiMap("", "force", force));
             }

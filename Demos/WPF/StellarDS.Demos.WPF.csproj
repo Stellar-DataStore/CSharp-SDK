@@ -9,8 +9,22 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="OAuth2Client" Version="1.6.1.2571" />
-      <PackageReference Include="Stellards.SDK" Version="1.0.1" />
+      <PackageReference Include="Stellards.SDK" Version="1.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="Colors.xaml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Page>
+      <Page Update="DatagridTemplate.xaml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Page>
     </ItemGroup>
 
 </Project>

@@ -31,14 +31,10 @@ namespace StellarDs.SDK.Model
         /// Initializes a new instance of the <see cref="CreateRecordRequest" /> class.
         /// </summary>
         /// <param name="records">records (required).</param>
-        public CreateRecordRequest(List<Dictionary<string, Object>> records = default(List<Dictionary<string, Object>>))
+        public CreateRecordRequest(List<Dictionary<string, object?>>? records = default)
         {
             // to ensure "records" is required (not null)
-            if (records == null)
-            {
-                throw new ArgumentNullException("records is a required property for CreateRecordRequest and cannot be null");
-            }
-            this.Records = records;
+            this.Records = records ?? throw new ArgumentNullException("records is a required property for CreateRecordRequest and cannot be null");
         }
 
         /// <summary>

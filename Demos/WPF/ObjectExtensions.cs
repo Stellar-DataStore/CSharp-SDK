@@ -12,8 +12,10 @@ public static class ObjectExtensions
 
         foreach (var item in source)
         {
+            
+            
             someObjectType
-                .GetProperty(item.Key)
+                .GetProperty(item.Key, BindingFlags.IgnoreCase |  BindingFlags.Public | BindingFlags.Instance)
                 ?.SetValue(someObject, item.Value, null);
         }
 
