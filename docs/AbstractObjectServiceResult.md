@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.AbstractObjectServiceResult
+# Stellards.SDK.Model.AbstractObjectServiceResult
 
 ## Properties
 

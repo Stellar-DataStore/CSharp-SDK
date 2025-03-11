@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Api.ProjectApi
+# Stellards.SDK.Api.ProjectApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,9 +17,9 @@ Gets project(s) from the logged in user.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -112,9 +112,9 @@ Updates a project.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {

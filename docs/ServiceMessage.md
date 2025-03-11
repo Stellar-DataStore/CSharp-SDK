@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ServiceMessage
+# Stellards.SDK.Model.ServiceMessage
 
 ## Properties
 

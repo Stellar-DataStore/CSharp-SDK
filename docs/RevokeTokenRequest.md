@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.RevokeTokenRequest
+# Stellards.SDK.Model.RevokeTokenRequest
 
 ## Properties
 

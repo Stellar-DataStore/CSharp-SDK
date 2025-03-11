@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.FieldRequest
+# Stellards.SDK.Model.FieldRequest
 
 ## Properties
 

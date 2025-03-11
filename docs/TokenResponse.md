@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.TokenResponse
+# Stellards.SDK.Model.TokenResponse
 
 ## Properties
 

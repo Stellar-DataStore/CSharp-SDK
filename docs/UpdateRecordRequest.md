@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.UpdateRecordRequest
+# Stellards.SDK.Model.UpdateRecordRequest
 
 ## Properties
 

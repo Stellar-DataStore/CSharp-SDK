@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.TableRequest
+# Stellards.SDK.Model.TableRequest
 
 ## Properties
 

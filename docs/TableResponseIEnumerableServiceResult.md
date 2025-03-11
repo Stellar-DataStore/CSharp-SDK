@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.TableResponseIEnumerableServiceResult
+# Stellards.SDK.Model.TableResponseIEnumerableServiceResult
 
 ## Properties
 

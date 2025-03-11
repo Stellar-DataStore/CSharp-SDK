@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.TableResponse
+# Stellards.SDK.Model.TableResponse
 
 ## Properties
 

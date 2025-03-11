@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ProjectRequest
+# Stellards.SDK.Model.ProjectRequest
 
 ## Properties
 

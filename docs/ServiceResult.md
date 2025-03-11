@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ServiceResult
+# Stellards.SDK.Model.ServiceResult
 
 ## Properties
 

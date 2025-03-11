@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.FieldResponse
+# Stellards.SDK.Model.FieldResponse
 
 ## Properties
 

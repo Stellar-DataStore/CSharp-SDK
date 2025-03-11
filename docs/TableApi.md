@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Api.TableApi
+# Stellards.SDK.Api.TableApi
 
 All URIs are relative to *http://localhost*
 
@@ -19,9 +19,9 @@ Deletes a table from the database.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -114,9 +114,9 @@ Gets table(s) from the logged in user.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -211,9 +211,9 @@ Creates a new table in the database.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -310,9 +310,9 @@ Updates a table in the database.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {

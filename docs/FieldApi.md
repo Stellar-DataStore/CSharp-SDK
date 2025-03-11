@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Api.FieldApi
+# Stellards.SDK.Api.FieldApi
 
 All URIs are relative to *http://localhost*
 
@@ -19,9 +19,9 @@ Deletes the given field within the given table.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -116,9 +116,9 @@ Gets field(s) from given table.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -215,9 +215,9 @@ Adds a field to the given table.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -317,9 +317,9 @@ Updates the given field in the given table.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {

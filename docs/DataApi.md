@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Api.DataApi
+# Stellards.SDK.Api.DataApi
 
 All URIs are relative to *http://localhost*
 
@@ -23,9 +23,9 @@ Download a file from a blob field as a stream.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -127,9 +127,9 @@ Upload a file to a blob field.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -233,9 +233,9 @@ Deletes all records from the given table.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -328,9 +328,9 @@ Deletes records from the given table.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -425,9 +425,9 @@ Deletes records from the given table.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -522,9 +522,9 @@ Gets the records for a given table.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -636,9 +636,9 @@ Adds records to the given table.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
@@ -737,9 +737,9 @@ Updates records in the given table based on the values in record.
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {

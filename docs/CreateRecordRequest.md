@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreateRecordRequest
+# Stellards.SDK.Model.CreateRecordRequest
 
 ## Properties
 

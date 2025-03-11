@@ -49,9 +49,9 @@ c.Proxy = webProxy;
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using Stellards.SDK.Api;
+using Stellards.SDK.Client;
+using Stellards.SDK.Model;
 
 namespace Example
 {
