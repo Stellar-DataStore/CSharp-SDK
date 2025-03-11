@@ -10,7 +10,7 @@
     <AssemblyTitle>OpenAPI Library</AssemblyTitle>
     <Description>The Stellar DataStore service is your instantly available, secure and worry-free cloud data storage service. Sign-up now and minutes later, you can start putting your data in the cloud.</Description>
     <Copyright>No Copyright</Copyright>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Stellards.SDK.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/Stellar-DataStore/CSharp-SDK</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -24,6 +24,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PublicSign>false</PublicSign>
     <PackageIcon>android-chrome-192x192.png</PackageIcon>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
