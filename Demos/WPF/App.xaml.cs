@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StellarDS.Demos.WPF.Oauth;
 using StellarDs.SDK.Api;
 using StellarDs.SDK.Client;
 
@@ -36,13 +37,14 @@ public partial class App : Application
 
     private void ConfigureServices(ServiceCollection serviceCollection)
     {
-        serviceCollection.AddTransient(typeof(MainWindow));
+        serviceCollection.AddTransient<MainWindow>();
         var config = new StellarDs.SDK.Client.Configuration();
-        config.ApiKey.Add("Authorization", Configuration.GetSection("StellarDSSettings").GetValue<string>("APIKey") ?? "");
+        config.ApiKey.Add("Authorization", "");
         config.ApiKeyPrefix.Add("Authorization", "Bearer");
+        var oauthConfig = Configuration.GetSection("StellarDSSettings").Get<OauthConfiguration>();
         
         var dataApi = new DataApi(config);
-        
         serviceCollection.AddSingleton<DataApi>(dataApi);
+        if (oauthConfig != null) serviceCollection.AddSingleton<OauthConfiguration>(oauthConfig);
     }
 }
