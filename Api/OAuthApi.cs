@@ -316,12 +316,6 @@ namespace StellarDs.SDK.Api
             localVarRequestOptions.Operation = "OAuthApi.RevokePost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/v1/oauth/revoke", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
@@ -394,12 +388,6 @@ namespace StellarDs.SDK.Api
 
             localVarRequestOptions.Operation = "OAuthApi.RevokePost";
             localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/oauth/revoke", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -502,12 +490,7 @@ namespace StellarDs.SDK.Api
 
             localVarRequestOptions.Operation = "OAuthApi.TokenPost";
             localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
+            
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<TokenResponse>("/v1/oauth/token", localVarRequestOptions, this.Configuration);
@@ -611,12 +594,6 @@ namespace StellarDs.SDK.Api
 
             localVarRequestOptions.Operation = "OAuthApi.TokenPost";
             localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (Bearer) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<TokenResponse>("/v1/oauth/token", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
