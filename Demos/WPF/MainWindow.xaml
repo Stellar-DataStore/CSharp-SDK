@@ -7,9 +7,6 @@
         mc:Ignorable="d"
         Title="Customer Management" Height="800" Width="1600" 
         Background="#34495E" FontFamily="Segoe UI" WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <ResourceDictionary Source="DatagridTemplate.xaml"></ResourceDictionary>
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />  <!-- Taskbar -->
@@ -55,66 +52,69 @@
                   HorizontalScrollBarVisibility="Hidden"
                   VerticalScrollBarVisibility="Hidden"
                   HeadersVisibility="Column"
-                  BorderThickness="0">
-            <DataGrid.Resources>
-
-                <!-- Row Background for alternate rows -->
-                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#4A627A" />
-
-                <!-- Remove default blue hover effect -->
-                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#5A7899" />
-                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White" />
-            </DataGrid.Resources>
+                  BorderThickness="0"
+                  GridLinesVisibility="None">
+                
+            <!-- RowStyle with DataTriggers for Selection and Hover -->
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
-                    <Setter Property="Height" Value="Auto" /> <!-- Auto row height -->
-                    <Setter Property="Background" Value="#4A627A" /> <!-- Custom background -->
-                    <Setter Property="Foreground" Value="White" /> <!-- White Text -->
-                    <Setter Property="BorderBrush" Value="#5A7899" /> <!-- Subtle border for rows -->
-                    <Setter Property="BorderThickness" Value="0,0,0,1" /> <!-- Light border at the bottom of rows -->
+                    <Setter Property="Height" Value="Auto"/> <!-- Auto row height -->
+                    <Setter Property="Background" Value="#4A627A"/> <!-- Custom background -->
+                    <Setter Property="Foreground" Value="White"/> <!-- White Text -->
+                    <Setter Property="BorderBrush" Value="#5A7899"/> <!-- Subtle border for rows -->
+                    <Setter Property="BorderThickness" Value="0,0,0,1"/> <!-- Light border at the bottom of rows -->
+
                     <Style.Triggers>
                         <!-- Selection State -->
-                        <Trigger Property="IsFocused" Value="true">
-                            <Setter Property="Background" Value="#4A90E2" /> <!-- Highlighted Blue Background -->
-                            <Setter Property="Foreground" Value="White" /> <!-- White Text -->
-                            <Setter Property="BorderBrush" Value="#3498DB" /> <!-- Blue border on selected row -->
-                            <Setter Property="BorderThickness" Value="0,0,2,0" /> <!-- Blue border thickness -->
-                        </Trigger>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsSelected}" Value="True">
+                            <Setter Property="Background" Value="#4A90E2"/> <!-- Highlighted Blue Background -->
+                            <Setter Property="Foreground" Value="White"/> <!-- White Text -->
+                        </DataTrigger>
 
                         <!-- Hover Effect -->
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#719ABC" /> <!-- Hover color -->
-                            <Setter Property="Foreground" Value="White" /> <!-- White Text -->
-                            <!-- Light hover border at the bottom -->
-                        </Trigger>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True">
+                            <Setter Property="Background" Value="#7AA3CE"/> <!-- Hover color -->
+                            <Setter Property="Foreground" Value="White"/> <!-- White Text -->
+                        </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </DataGrid.RowStyle>
+
+            <!-- DataGrid CellStyle for custom colors -->
             <DataGrid.CellStyle>
                 <Style TargetType="DataGridCell">
-                    <Setter Property="Background" Value="#4A627A" /> <!-- Custom cell background -->
-                    <Setter Property="Foreground" Value="White" /> <!-- White Text -->
-                    <Setter Property="BorderBrush" Value="#5A7899" /> <!-- Subtle border for cells -->
-                    <Setter Property="BorderThickness" Value="0,0,0,0" />
-                    <!-- Light border on the right side of the cell -->
+                    <Setter Property="Background" Value="#4A627A"/> <!-- Custom cell background -->
+                    <Setter Property="Foreground" Value="White"/> <!-- White Text -->
+                    <Setter Property="BorderBrush" Value="#5A7899"/> <!-- Subtle border for cells -->
+                    <Setter Property="BorderThickness" Value="0,0,0,0"/> <!-- Light border on the right side of the cell -->
                 </Style>
             </DataGrid.CellStyle>
-            <DataGrid.ColumnHeaderStyle>
+
+            <!-- Column Header Style -->
+            <DataGrid.Resources>
                 <Style TargetType="DataGridColumnHeader">
                     <!-- Header Background -->
-                    <Setter Property="Background" Value="#5A7899" />
+                    <Setter Property="Background" Value="#5A7899"/>
                     <!-- Header Text Color -->
-                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Foreground" Value="White"/>
                     <!-- Header Font Style -->
-                    <Setter Property="FontSize" Value="16" />
-                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
                     <!-- Header Padding and Border -->
-                    <Setter Property="Padding" Value="10,5" />
-                    <Setter Property="BorderBrush" Value="#34495E" />
-                    <Setter Property="BorderThickness" Value="0,0,0,2" />
+                    <Setter Property="Padding" Value="10,5"/>
+                    <Setter Property="BorderBrush" Value="#34495E"/>
+                    <Setter Property="BorderThickness" Value="0,0,0,0"/>
                 </Style>
-            </DataGrid.ColumnHeaderStyle>
+
+                <!-- Row Background for alternate rows -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#4A627A"/>
+                
+                <!-- Remove default blue hover effect -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#5A7899"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White"/>
+            </DataGrid.Resources>
         </DataGrid>
+     
         <StackPanel Grid.Row="2" Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">

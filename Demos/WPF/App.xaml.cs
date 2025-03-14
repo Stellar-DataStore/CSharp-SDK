@@ -41,10 +41,19 @@ public partial class App : Application
         var config = new StellarDs.SDK.Client.Configuration();
         config.ApiKey.Add("Authorization", "");
         config.ApiKeyPrefix.Add("Authorization", "Bearer");
-        var oauthConfig = Configuration.GetSection("StellarDSSettings").Get<OauthConfiguration>();
-        
+
+        var oauthConfig = Configuration?.GetSection("StellarDSSettings").Get<OauthConfiguration>();
+
+        if (oauthConfig == null) return;
+       
+        // with the authCode we set the authetication token to use in api calls to dropbox.  
         var dataApi = new DataApi(config);
+        var oauthApi = new OAuthApi( new StellarDs.SDK.Client.Configuration());
+           
         serviceCollection.AddSingleton<DataApi>(dataApi);
-        if (oauthConfig != null) serviceCollection.AddSingleton<OauthConfiguration>(oauthConfig);
+        serviceCollection.AddSingleton<OAuthApi>(oauthApi);
+        serviceCollection.AddSingleton<OauthConfiguration>(oauthConfig);
+
+        serviceCollection.AddSingleton<RefreshTimer>();
     }
 }
