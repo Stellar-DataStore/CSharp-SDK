@@ -54,26 +54,14 @@ public partial class MainWindow : Window
         if (result is not { IsSuccess: true, Data: not null }) return;
         var data = result.Data;
         _max = result.Count;
-        (_page, _totalPage) = CalculatePagination(_offset, 10, (int)_max);
+        (_page, _totalPage) = Utilities.CalculatePagination(_offset, 10, (int)_max);
         PageLabel.Text = $"Page {_page} of {_totalPage}";
         PaginationLabel.Text = $"Page {_page} of {_totalPage}";
 
         var source = data.Select(d => d.ToObject<Customer>()).ToList();
         DataGrid.ItemsSource = source;
     }
-
-    private static (int CurrentPage, int MaxPages) CalculatePagination(int offset, int pageSize, int totalRecords)
-    {
-        if (pageSize <= 0) throw new ArgumentException("Page size must be greater than zero.", nameof(pageSize));
-        if (offset < 0) throw new ArgumentException("Offset cannot be negative.", nameof(offset));
-        if (totalRecords < 0) throw new ArgumentException("Total records cannot be negative.", nameof(totalRecords));
-
-        var currentPage = (offset / pageSize) + 1;
-        var maxPages = (int)Math.Ceiling((double)totalRecords / pageSize);
-
-        return (currentPage, maxPages);
-    }
-
+    
     private async void DataGrid_OnRowEditEnding(object? sender, DataGridRowEditEndingEventArgs e)
     {
         if (sender is not DataGrid dataGrid || dataGrid.SelectedItem == null)
