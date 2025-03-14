@@ -17,13 +17,10 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
-        <DataGrid Name="DataGrid" SelectionMode="Single" RowEditEnding="DataGrid_OnRowEditEnding" CanUserDeleteRows="True" Grid.ColumnSpan="2" Grid.RowSpan="4
+        <DataGrid Name="DataGrid" SelectionMode="Single" RowEditEnding="DataGrid_OnRowEditEnding" CanUserDeleteRows="True" Grid.ColumnSpan="3" Grid.RowSpan="4
         " Style="{DynamicResource {x:Type DataGrid}}"></DataGrid>
-        <Button Click="ButtonBase_OnClick" Grid.Column="0" Grid.Row="4">Delete Record</Button>
+        <Button Click="ButtonBase_OnClick" Grid.Column="0" Grid.Row="1">Delete Record</Button>
     </Grid>
 </Window>
