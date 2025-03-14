@@ -19,13 +19,4 @@
       </None>
     </ItemGroup>
 
-    <ItemGroup>
-      <Page Update="Colors.xaml">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Page>
-      <Page Update="DatagridTemplate.xaml">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Page>
-    </ItemGroup>
-
 </Project>
