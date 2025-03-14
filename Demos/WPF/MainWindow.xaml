@@ -5,22 +5,149 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StellarDS.Demos.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Customer Management" Height="800" Width="1600" 
+        Background="#34495E" FontFamily="Segoe UI" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary Source="DatagridTemplate.xaml"></ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="40" />  <!-- Taskbar -->
+            <RowDefinition Height="*" />   <!-- DataGrid (Expands) -->
+            <RowDefinition Height="50" />  <!-- Pagination -->
         </Grid.RowDefinitions>
-        <DataGrid Name="DataGrid" SelectionMode="Single" RowEditEnding="DataGrid_OnRowEditEnding" CanUserDeleteRows="True" Grid.ColumnSpan="3" Grid.RowSpan="4
-        " Style="{DynamicResource {x:Type DataGrid}}"></DataGrid>
-        <Button Click="ButtonBase_OnClick" Grid.Column="0" Grid.Row="1">Delete Record</Button>
+        <DockPanel Grid.Row="0" Background="#2C3E50" LastChildFill="False" Height="40">
+            <TextBlock x:Name="PageLabel"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontSize="16"
+                       FontWeight="Bold"
+
+                       Margin="10" />
+            <Button
+                Content="🗑 Delete"
+                Width="100"
+                Height="35"
+                Margin="10,5,0,5"
+                Background="#E74C3C" Foreground="White"
+                FontWeight="Bold"
+                Cursor="Hand"
+                DockPanel.Dock="Right"
+                BorderThickness="0"
+                Click="ButtonBase_OnClick" />
+
+
+        </DockPanel>
+        <DataGrid Grid.Row="1" Name="DataGrid" RowEditEnding="DataGrid_OnRowEditEnding"
+                  CanUserDeleteRows="True 
+        " Margin="10"
+                  Background="#3D566E"
+                  Foreground="White"
+                  FontSize="14"
+                  AlternationCount="2"
+                  HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  CanUserResizeColumns="False"
+                  CanUserResizeRows="False"
+                  HorizontalScrollBarVisibility="Hidden"
+                  VerticalScrollBarVisibility="Hidden"
+                  HeadersVisibility="Column"
+                  BorderThickness="0">
+            <DataGrid.Resources>
+
+                <!-- Row Background for alternate rows -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#4A627A" />
+
+                <!-- Remove default blue hover effect -->
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#5A7899" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White" />
+            </DataGrid.Resources>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Height" Value="Auto" /> <!-- Auto row height -->
+                    <Setter Property="Background" Value="#4A627A" /> <!-- Custom background -->
+                    <Setter Property="Foreground" Value="White" /> <!-- White Text -->
+                    <Setter Property="BorderBrush" Value="#5A7899" /> <!-- Subtle border for rows -->
+                    <Setter Property="BorderThickness" Value="0,0,0,1" /> <!-- Light border at the bottom of rows -->
+                    <Style.Triggers>
+                        <!-- Selection State -->
+                        <Trigger Property="IsFocused" Value="true">
+                            <Setter Property="Background" Value="#4A90E2" /> <!-- Highlighted Blue Background -->
+                            <Setter Property="Foreground" Value="White" /> <!-- White Text -->
+                            <Setter Property="BorderBrush" Value="#3498DB" /> <!-- Blue border on selected row -->
+                            <Setter Property="BorderThickness" Value="0,0,2,0" /> <!-- Blue border thickness -->
+                        </Trigger>
+
+                        <!-- Hover Effect -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#719ABC" /> <!-- Hover color -->
+                            <Setter Property="Foreground" Value="White" /> <!-- White Text -->
+                            <!-- Light hover border at the bottom -->
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Background" Value="#4A627A" /> <!-- Custom cell background -->
+                    <Setter Property="Foreground" Value="White" /> <!-- White Text -->
+                    <Setter Property="BorderBrush" Value="#5A7899" /> <!-- Subtle border for cells -->
+                    <Setter Property="BorderThickness" Value="0,0,0,0" />
+                    <!-- Light border on the right side of the cell -->
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <!-- Header Background -->
+                    <Setter Property="Background" Value="#5A7899" />
+                    <!-- Header Text Color -->
+                    <Setter Property="Foreground" Value="White" />
+                    <!-- Header Font Style -->
+                    <Setter Property="FontSize" Value="16" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <!-- Header Padding and Border -->
+                    <Setter Property="Padding" Value="10,5" />
+                    <Setter Property="BorderBrush" Value="#34495E" />
+                    <Setter Property="BorderThickness" Value="0,0,0,2" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+        </DataGrid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Button x:Name="PreviousButton"
+                    Content="◀ Previous"
+                    Width="120"
+                    Height="40"
+                    FontSize="14"
+                    Background="#5A7899"
+                    Foreground="White"
+                    Cursor="Hand"
+                    BorderThickness="0"
+                    Click="OnPreviousClicked" />
+
+            <TextBlock x:Name="PaginationLabel"
+                       Text="Page 1 of X"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"
+                       Margin="15" />
+
+            <Button x:Name="NextButton"
+                    Content="Next ▶"
+                    Width="120"
+                    Height="40"
+                    FontSize="14"
+                    Background="#5A7899"
+                    Foreground="White"
+                    Cursor="Hand"
+                    BorderThickness="0"
+                    Click="OnNextClicked" />
+        </StackPanel>
+
+
     </Grid>
 </Window>

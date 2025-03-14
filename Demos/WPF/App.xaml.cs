@@ -16,8 +16,8 @@ namespace StellarDS.Demos.WPF;
 /// </summary>
 public partial class App : Application
 {
-    private IServiceProvider _serviceProvider;
-    public IConfiguration Configuration { get; private set; }
+    private IServiceProvider? _serviceProvider;
+    private IConfiguration? Configuration { get; set; }
 
     protected override void OnStartup(StartupEventArgs e)
     {
