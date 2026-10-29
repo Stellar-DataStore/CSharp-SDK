@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+    <RootNamespace>StellarDs.Sdk</RootNamespace>
+    <AssemblyName>StellarDs.Sdk</AssemblyName>
+    <PackageId>Stellards.SDK</PackageId>
+    <Title>StellarDS SDK</Title>
+    <Description>Official .NET client for the StellarDS (Stellar DataStore) v2 API: projects, tables, fields, records, custom queries, procedures, relations, roles, webhooks, OAuth and more.</Description>
+    <PackageTags>StellarDS;Stellar DataStore;stellards.io;database;cloud;REST;SDK</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReleaseNotes>2.0.0: rewritten from scratch for the StellarDS v2 API. See CHANGELOG.md.</PackageReleaseNotes>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <IsTrimmable>false</IsTrimmable>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="StellarDs.Sdk.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\assets\icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
