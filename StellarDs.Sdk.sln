@@ -1,0 +1,52 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{659735AF-348B-5CE1-9DAF-DD85687389CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A7F76805-4F7B-5D04-A1F6-CAAAF982C179}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{EBBA20F9-9160-590F-8813-BCCE4B130B18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StellarDs.Sdk", "src\StellarDs.Sdk\StellarDs.Sdk.csproj", "{D6528A54-D456-54C6-8EEC-280367D5A836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StellarDs.Sdk.Extensions.DependencyInjection", "src\StellarDs.Sdk.Extensions.DependencyInjection\StellarDs.Sdk.Extensions.DependencyInjection.csproj", "{A6C2293F-110F-5349-9276-ADFF415E35D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StellarDs.Sdk.Tests", "tests\StellarDs.Sdk.Tests\StellarDs.Sdk.Tests.csproj", "{28DEE5D2-BA6C-5521-8180-208915C0946B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StellarDs.Sdk.Sample", "samples\StellarDs.Sdk.Sample\StellarDs.Sdk.Sample.csproj", "{FE22CBED-FFF2-54FA-8FC7-74BBD4578CD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6528A54-D456-54C6-8EEC-280367D5A836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6528A54-D456-54C6-8EEC-280367D5A836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6528A54-D456-54C6-8EEC-280367D5A836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6528A54-D456-54C6-8EEC-280367D5A836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C2293F-110F-5349-9276-ADFF415E35D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C2293F-110F-5349-9276-ADFF415E35D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C2293F-110F-5349-9276-ADFF415E35D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C2293F-110F-5349-9276-ADFF415E35D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28DEE5D2-BA6C-5521-8180-208915C0946B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28DEE5D2-BA6C-5521-8180-208915C0946B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28DEE5D2-BA6C-5521-8180-208915C0946B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28DEE5D2-BA6C-5521-8180-208915C0946B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE22CBED-FFF2-54FA-8FC7-74BBD4578CD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE22CBED-FFF2-54FA-8FC7-74BBD4578CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE22CBED-FFF2-54FA-8FC7-74BBD4578CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE22CBED-FFF2-54FA-8FC7-74BBD4578CD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6528A54-D456-54C6-8EEC-280367D5A836} = {659735AF-348B-5CE1-9DAF-DD85687389CC}
+		{A6C2293F-110F-5349-9276-ADFF415E35D4} = {659735AF-348B-5CE1-9DAF-DD85687389CC}
+		{28DEE5D2-BA6C-5521-8180-208915C0946B} = {A7F76805-4F7B-5D04-A1F6-CAAAF982C179}
+		{FE22CBED-FFF2-54FA-8FC7-74BBD4578CD4} = {EBBA20F9-9160-590F-8813-BCCE4B130B18}
+	EndGlobalSection
+EndGlobal
