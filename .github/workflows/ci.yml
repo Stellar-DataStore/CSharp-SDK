@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, 'feature/**' ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore StellarDs.Sdk.sln
+
+      - name: Build
+        run: dotnet build StellarDs.Sdk.sln --configuration Release --no-restore -warnaserror
+
+      - name: Test
+        run: dotnet test StellarDs.Sdk.sln --configuration Release --no-build --logger "trx;LogFileName=test-results.trx"
+
+      - name: Pack (validation only, not published)
+        run: dotnet pack StellarDs.Sdk.sln --configuration Release --no-build --output artifacts
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: '**/TestResults/*.trx'
